@@ -5,7 +5,7 @@
              xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
              x:Class="CustomizeCheckBoxColor.MainPage">
 
-    <Grid RowDefinitions="0.9*, 1, 60" IsClippedToBounds="True">
+    <Grid RowDefinitions="0.9*, 1, 60">
         <Grid.BindingContext>
             <local:DataFormViewModel/>
         </Grid.BindingContext>
