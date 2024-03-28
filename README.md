@@ -1,9 +1,9 @@
 # How to customize the check box editor color in .NET MAUI DataForm (SfDataForm)
 This repository contains a sample of how to customize the check box editor color in [.NET MAUI DataForm (SfDataForm)](https://help.syncfusion.com/maui/dataform/getting-started) control.
 
-Please refer the KB through this link.
+Please refer the KB through this [link](https://support.syncfusion.com/kb/article/12368/how-to-customize-the-check-box-editor-color-in-net-maui-dataform-sfdataform).
 
-# Syncfusion controls
+## Syncfusion controls
 
 This project used the following Syncfusion control(s):
 * [SfDataForm](https://www.syncfusion.com/maui-controls/maui-dataform)
