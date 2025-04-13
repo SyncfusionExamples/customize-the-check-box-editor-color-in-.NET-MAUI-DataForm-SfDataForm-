@@ -11,6 +11,7 @@ namespace CustomizeCheckBoxColor
             this.Address = string.Empty;
             this.City = string.Empty;
             this.Country = string.Empty;
+            this.BirthDate = string.Empty;
         }
 
         [Display(Prompt = "Enter your name")]

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:CustomizeCheckBoxColor"
              xmlns:dataForm="clr-namespace:Syncfusion.Maui.DataForm;assembly=Syncfusion.Maui.DataForm"
+             x:DataType="local:DataFormViewModel"
              x:Class="CustomizeCheckBoxColor.MainPage">
 
     <Grid RowDefinitions="0.9*, 1, 60">

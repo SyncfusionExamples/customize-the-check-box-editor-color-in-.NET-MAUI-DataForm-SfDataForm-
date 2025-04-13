@@ -4,11 +4,11 @@ namespace CustomizeCheckBoxColor
 {
     public class DataFormBehavior : Behavior<ContentPage>
     {
-        private SfDataForm dataForm;
+        private SfDataForm? dataForm;
 
-        private Button applyButton;
+        private Button? applyButton;
 
-        private Button cancelButton;
+        private Button? cancelButton;
         protected override void OnAttachedTo(ContentPage bindable)
         {
             base.OnAttachedTo(bindable);
@@ -38,7 +38,7 @@ namespace CustomizeCheckBoxColor
                 this.applyButton.Clicked += OnApplyButtonClicked;
             }
         }
-        private void OnGenerateDataFormItem(object sender, GenerateDataFormItemEventArgs e)
+        private void OnGenerateDataFormItem(object? sender, GenerateDataFormItemEventArgs e)
         {
             if (e.DataFormItem!= null)
             {
@@ -48,21 +48,21 @@ namespace CustomizeCheckBoxColor
                 }
             }
         }
-        private async void OnApplyButtonClicked(object sender, EventArgs e)
+        private async void OnApplyButtonClicked(object? sender, EventArgs e)
         {
-            if (this.dataForm != null && App.Current?.MainPage != null)
+            if (this.dataForm != null)
             {
                 if (this.dataForm.Validate())
                 {
-                    await App.Current.MainPage.DisplayAlert("", "Applied successfully", "OK");
+                    await DisplayAlert("", "Applied successfully", "OK");
                 }
                 else
                 {
-                    await App.Current.MainPage.DisplayAlert("", "Please enter the required details", "OK");
+                    await DisplayAlert("", "Please enter the required details", "OK");
                 }
             }
         }
-        private void OnCancelButtonClicked(object sender, EventArgs e)
+        private void OnCancelButtonClicked(object? sender, EventArgs e)
         {
             if (this.dataForm != null)
 
@@ -87,6 +87,19 @@ namespace CustomizeCheckBoxColor
             {
                 this.dataForm.GenerateDataFormItem -= this.OnGenerateDataFormItem;
             }
+        }
+
+        /// <summary>
+        /// Displays an alert dialog to the user.
+        /// </summary>
+        /// <param name="title">The title of the alert dialog.</param>
+        /// <param name="message">The message to display.</param>
+        /// <param name="cancel">The text for the cancel button.</param>
+        /// <returns>A task representing the asynchronous alert display operation.</returns>
+        private Task DisplayAlert(string title, string message, string cancel)
+        {
+            return App.Current?.Windows?[0]?.Page!.DisplayAlert(title, message, cancel)
+                   ?? Task.FromResult(false);
         }
     }
 }
